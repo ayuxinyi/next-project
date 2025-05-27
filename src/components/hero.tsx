@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React, { memo } from "react";
-import type { FC, ReactNode } from "react";
+import React from "react";
+import type { ReactNode } from "react";
 // import homeSrc from "./public/home.jpg";
 
 interface Props {
@@ -9,7 +9,10 @@ interface Props {
   content?: string; // 可选的内容
 }
 
-const Hero: FC<Props> = ({ imgSrc = "/home.jpg", content = "首页图片" }) => {
+export default function Hero({
+  imgSrc = "/home.jpg",
+  content = "首页图片",
+}: Props) {
   return (
     <div className="h-screen relative">
       <div className="absolute inset-0 -z-10">
@@ -23,6 +26,4 @@ const Hero: FC<Props> = ({ imgSrc = "/home.jpg", content = "首页图片" }) => 
       </div>
     </div>
   );
-};
-
-export default memo(Hero);
+}

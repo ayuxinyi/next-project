@@ -1,17 +1,10 @@
 import Hero from "@/components/hero";
-import React, { memo } from "react";
-import type { FC, ReactNode } from "react";
+import React from "react";
 
-interface Props {
-  children?: ReactNode;
-}
-
-const Home: FC<Props> = () => {
+export default function Home() {
   return (
     <div>
       <Hero />
     </div>
   );
-};
-
-export default memo(Home);
+}

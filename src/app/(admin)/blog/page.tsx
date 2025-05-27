@@ -1,11 +1,6 @@
 import Hero from "@/components/hero";
-import React, { memo } from "react";
-import type { FC, ReactNode } from "react";
+import React from "react";
 import type { Metadata } from "next";
-
-interface Props {
-  children?: ReactNode;
-}
 
 export const metadata: Metadata = {
   title: "Blog Page",
@@ -13,8 +8,6 @@ export const metadata: Metadata = {
   description: "Read our latest blog posts and articles on various topics.",
 };
 
-const Blog: FC<Props> = () => {
+export default function Blog() {
   return <Hero imgSrc="/blog.jpg" content="Blog Posts" />;
-};
-
-export default memo(Blog);
+}

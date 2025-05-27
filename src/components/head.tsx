@@ -1,18 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { memo } from "react";
-import type { FC, ReactNode } from "react";
+import React from "react";
 
-interface Props {
-  children?: ReactNode;
-}
 const linkData = [
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Blog", href: "/blog" },
 ];
-const Head: FC<Props> = () => {
+export default function Header() {
   const pathname = usePathname();
   return (
     <div className="absolute w-full z-10">
@@ -36,6 +32,4 @@ const Head: FC<Props> = () => {
       </div>
     </div>
   );
-};
-
-export default memo(Head);
+}
